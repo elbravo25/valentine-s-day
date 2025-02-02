@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    padding: 16px;
+    height: 100vh;
+    background-image: url(./images/bg.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.valentines_card {
+    position: relative;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform: perspective(2500px);
+    transition: 4s;
+}
+
+.front_img {
+    width: 300px;
+    margin-right: -50px;
+    margin-left: -50px;
+    margin-top: 100px;
+    position: relative;
+}
+
+.inside_img {
+    width: 300px;
+    margin-right: -50px;
+    margin-left: -50px;
+    margin-top: 50px;
+    position: relative;
+}
+
+.valentines_card:hover .front_card {
+    transform: rotateY(-160deg);
+}
+
+.valentines_card:hover .front_text { 
+    display: none;
+}
+
+.front_text, .inside_text {
+    color:black;
+    font-family: "Caveat", serif;
+    font-size: 24px;
+}
+
+.front_card{
+    position: relative;
+    overflow: hidden;
+    transform-origin: left;
+    margin: 40px auto;
+    padding: 16px;
+    background-color: #f4f4e6;
+    text-align: center;
+    box-shadow: 0 24px 40px -8px #000;
+    width: 450px;
+    height: 750px;
+}
+
+.inside_card {
+    position: absolute;
+    overflow: hidden;
+    transform-origin: left;
+    margin: 40px auto;
+    padding: 16px;
+    background-color: #f4f4e6;
+    text-align: center;
+    box-shadow: 0 24px 40px -8px #000;
+    width: 450px;
+    height: 750px;
+    z-index: -1;
+    left: 0;
+    top: 0;
+}
+
+.valentines_card audio{
+    display: none;
+}
+
+.valentines_card:hover .front_img{
+    display: none;
+}
+
+.inside_card audio {
+    display: flex;
+    margin-left: 50px;
+    margin-right: 40px;
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.show {
+    opacity: 1;
+}
+
+/* Initially hide the message */
+.hidden {
+    visibility: hidden;   /* Keeps the element hidden but it still takes up space */
+    opacity: 0;           /* Makes it invisible */
+}
+
+/* Message color and fade-in effect */
+#message {
+    color: red;
+    font-family: "Caveat", serif;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    transition: opacity 2s ease-in-out, visibility 0s linear 2s;  /* Fade-in with visibility delay */
+}
+
+/* Show message with fade-in effect */
+.show {
+    visibility: visible; /* Makes the message visible */
+    opacity: 1;          /* Fades in to full opacity */
+}
